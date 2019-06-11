@@ -10,7 +10,7 @@ const obj = {
 
     if (Array.isArray(o)) {
       o.forEach(x => {
-        mergeSets(values, obj.nestedFind(x, s));
+        mergeSets(values, obj.All(x, s));
       });
     } else {
       if (typeof o === "object") {
@@ -20,11 +20,11 @@ const obj = {
             // either object or array object
             if (Array.isArray(o[e])) {
               o[e].forEach(x => {
-                mergeSets(values, obj.nestedFind(x, s));
+                mergeSets(values, obj.All(x, s));
               });
             } else if (o[e] == "undefined" || o[e] == null) {
             } else {
-              mergeSets(values, obj.nestedFind(o[e], s));
+              mergeSets(values, obj.All(o[e], s));
             }
           } else {
             if (e === s) {
