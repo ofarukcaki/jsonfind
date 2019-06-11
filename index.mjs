@@ -1,5 +1,5 @@
-module.exports = {
-  nestedFind: function nestedFind(o, s) {
+const obj = {
+  All: function(o, s) {
     let values = new Set();
 
     const mergeSets = (s1, s2) => (values = new Set([...s1, ...s2]));
@@ -10,7 +10,7 @@ module.exports = {
 
     if (Array.isArray(o)) {
       o.forEach(x => {
-        mergeSets(values, nestedFind(x, s));
+        mergeSets(values, obj.nestedFind(x, s));
       });
     } else {
       if (typeof o === "object") {
@@ -20,11 +20,11 @@ module.exports = {
             // either object or array object
             if (Array.isArray(o[e])) {
               o[e].forEach(x => {
-                mergeSets(values, nestedFind(x, s));
+                mergeSets(values, obj.nestedFind(x, s));
               });
             } else if (o[e] == "undefined" || o[e] == null) {
             } else {
-              mergeSets(values, nestedFind(o[e], s));
+              mergeSets(values, obj.nestedFind(o[e], s));
             }
           } else {
             if (e === s) {
@@ -39,3 +39,6 @@ module.exports = {
     return values;
   }
 };
+
+
+module.exports = obj;
