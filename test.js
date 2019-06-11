@@ -1,4 +1,4 @@
-const jsonFindAll = require("./index.mjs").nestedFind;
+const jsonfind = require("./index.js");
 
 const object1 = [
   {
@@ -398,4 +398,4 @@ const object1 = [
   }
 ];
 
-console.log(jsonFindAll(object1, "author"));
+console.log(jsonfind.All(object1, "author"));

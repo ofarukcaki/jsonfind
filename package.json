@@ -1,6 +1,6 @@
 {
   "name": "json-nested-find",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Finds and exports all values of given key from an unknown structured json object.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "json",
+    "array",
     "export",
     "find",
     "search",
